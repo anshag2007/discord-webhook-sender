@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,flash
 from pathlib import Path
 import discord
 import requests
@@ -21,6 +21,7 @@ def index():
 			message,
 			username=name,
 			avatar_url=avatar)
+		flash("Webhook Sent!")
 		
 	return render_template("index.html")
 
